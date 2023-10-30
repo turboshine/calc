@@ -7,7 +7,18 @@ function getUserNumberInput(){
     return parseInt(usrInput.value);
 }
 
-// Generates and writes calculation log
+/**
+ * Creates a calculation description and writes it to the output.
+ *
+ * This function takes an operator, the result before the calculation, and the
+ * calculation number, and generates a calculation description by combining
+ * these values. The resulting description is then written to the output using
+ * the provided outputResult function.
+ *
+ * @param {string} operator - The operator used in the calculation (e.g., '+', '-', '*', '/').
+ * @param {number} resultBeforeCalc - The result value before the calculation.
+ * @param {number} calcNumber - The number used in the calculation.
+ */
 function createAndWriteOutput(operator,resultBeforeCalc,calcNumber){
      const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
      outputResult(currentResult,calcDescription);
@@ -31,7 +42,7 @@ function writeToLog(
 
 function calculateResult(calculationType){
     const enteredNumber = getUserNumberInput();
-    
+
     if(
         calculationType != 'ADD' &&
         calculationType != 'SUBTRACT'  &&
